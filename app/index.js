@@ -42,15 +42,31 @@ window.addEventListener('load', () => {
   const textCount = () => {
     let text = document.getElementById('count-text').value
     const terms = document.getElementById('terms')
-
-    // 空白・改行削除
-    text = text.replace(/\s+/g, '')
+    
+    let rep = []
+    let resultValue
 
     for(i=1; i<=terms.childElementCount; i++) {
       let term = document.getElementById('term'+i).value
-      text = text.replace(new RegExp(term, "g"), '')
+      let length = term.length
+      let space = ' '.repeat(length)
+      rep[i] = text.replace(new RegExp(term, "g"), space)
+  
+      if (i === 1) {
+        resultValue = rep[i]
+      } else {
+        for(j=0; j<rep[i].length; j++) {
+          if (rep[i].charAt(j) === " ") {
+            resultValue = resultValue.slice(0,j) + " " + resultValue.slice(j+1)
+          }
+        }
+      }
     }
-    result.textContent = text.length + "文字"
+
+    // 空白・改行削除
+    resultValue = resultValue.replace(/\s+/g, '')
+
+    result.textContent = resultValue.length + "文字"
     result.classList.toggle("shake01")
     result.classList.toggle("shake02")
   }
