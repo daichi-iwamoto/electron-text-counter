@@ -4,7 +4,9 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "dev": "electron ."
+    "dev": "electron .",
+    "build:win": "electron-packager ./ text-counter --platform=win32 --arch=x64",
+    "build:mac": "electron-packager ./ text-counter --platform=darwin --arch=x64"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,7 @@
   },
   "homepage": "https://github.com/daichi-iwamoto/electron-text-counter#readme",
   "devDependencies": {
-    "electron": "^13.1.5"
+    "electron": "^13.1.5",
+    "electron-packager": "^15.2.0"
   }
 }

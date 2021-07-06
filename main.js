@@ -1,12 +1,17 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, screen } = require('electron')
 
 function createWindow () {
+  const { width, height } = screen.getPrimaryDisplay().workAreaSize
+
   const win = new BrowserWindow({
-    width: 800,
-    height: 600
+    top: 0,
+    left: 0,
+    width: width,
+    height: height,
+    'always-on-top': true
   })
 
-  win.loadFile('index.html')
+  win.loadFile('./app/index.html')
 }
 
 app.whenReady().then(() => {

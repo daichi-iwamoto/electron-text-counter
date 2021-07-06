@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Counter DX &#x1f575;</title>
+  <link rel="stylesheet" href="./index.css">
+  <script src="./index.js"></script>
+</head>
+
+<body>
+  <header>
+    <p>Text Counter DX &#x1f575;</p>
+  </header>
+
+  <section id="count-area">
+    <p>カウントするテキストを入力してください</p>
+    <textarea id="count-text" name="count-text"></textarea>
+  </section>
+
+  <section id="submit-area">
+    <div class="terms-area">
+      <p>カウント除外するテキストの入力</p>
+      <div class="function-buttons">
+        <a id="add-text">追加</a>
+        <a id="add-text-reset">リセット</a>
+      </div>
+      <div id="terms">
+        <input type="text" id="term1" placeholder="テキスト" />
+      </div>
+      <input id="submit" type="button" class="submit" value="カウントする&#x1f575;">
+    </div>
+    <div class="result-area">
+      <p>文字数は…</p>
+      <p id="result" class="shake01">0文字</p>
+    </div>
+  </section>
+</body>
+
+</html>
